@@ -1,0 +1,42 @@
+
+A REST API for this code could look like this:
+
+create a set
+POST /mahalanobis/set/<set-key>.json
+{
+    "last_n_points": 10000,
+    "last_n_seconds": 8640,
+    "dimensions": 3,
+    "outlier_percent": 5%
+}
+
+retrieve a set info
+GET /mahalanobis/set/<set-key>.json
+return
+{
+    <post fields>,
+    "threshold": 3.14,
+    "last_training": <timestamp>,
+}
+
+add points
+POST /mahalanobis/set/<set-key>/add.json
+{
+    "points" : [[ 1, 2, 3 ], ...]
+}
+
+train
+PUT /mahalanobis/set/<set-key>/train.json
+async, return 200 before completion
+
+distance
+POST /mahalanobis/set/<set-key>/compute-distance.json
+{
+    "points" : [[ 1, 2, 3 ], ...]
+}
+
+are outliers
+POST /mahalanobis/set/<set-key>/are-outliers.json
+{
+    "points" : [[ 1, 2, 3 ], ...]
+}

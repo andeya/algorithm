@@ -1,0 +1,5 @@
+fixed - Fast fixed point math for go
+====================================
+
+fixed is a fast fixed point math library for Go. It uses Q32.32 format
+numbers. The interface should be straightforward.

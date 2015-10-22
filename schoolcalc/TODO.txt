@@ -1,0 +1,29 @@
+Division test  | rules
+
+Idee für weitere Vorgehensweise:
+
+
+1. Wenn es allowed digits gibt:
+   Echten Wertebereich für Dividend & Divisor ermitteln
+
+2. min / max Quotient innerhalb der gültigen Fraction ermitteln
+3. Zufälligen Divisor ermitteln. wenn allowed digits:
+   allowedDivisor(min, max, divisor, allowedDigits, updown:bool) (divisor, err) 
+4. Dividend = result * allowedDivisor
+5. Dividen hat allowedRange?
+    Nein: fertig
+    Ja: Check:OK?
+    Ja: fertig
+    Nein: allowedDividend(min, max, dividend, divisor, updown:bool) (dividend, err)
+
+
+
+
+// GenDivisor, DivisorforResult, Constrain, Divisorrange, Quotientrange,
+
+  Alles: max 5 Sekunden
+    allowedDividend: max 5 Sekunden
+
+  Anzeigen, was fertig ist.
+  Ergebnis = angefragte Beispiele?
+  Nein: Fehlermeldung
