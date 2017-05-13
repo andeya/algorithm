@@ -70,4 +70,9 @@ func TestCheckCode(t *testing.T) {
 	if !ok || checkCode != "X" {
 		t.Fatalf("get '%s', expect 'X'", checkCode)
 	}
+
+	checkCode, ok = CheckCode("326221880102124")
+	if ok {
+		t.Fatalf("get '%s', expect ''", checkCode)
+	}
 }

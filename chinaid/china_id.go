@@ -78,19 +78,15 @@ func Validate(id string) bool {
 
 // CheckCode generates check code of chinese identity card number.
 func CheckCode(idBody string) (string, bool) {
-	switch len(idBody) {
-	case 15:
-		return "", true
-	case 17:
+	if len(idBody) == 17 {
 		var sum int
 		for k, v := range idBody {
 			d, _ := strconv.Atoi(string(v))
 			sum += weight[k] * d
 		}
 		return string(validate[sum%11]), true
-	default:
-		return "", false
 	}
+	return "", false
 }
 
 // Parse parse chinese identity card number to *ChinaID
