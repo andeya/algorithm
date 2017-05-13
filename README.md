@@ -1,2 +1,3 @@
 # algorithm
-搜集的大量算法库
+
+A large collection of algorithms.
